@@ -1,7 +1,7 @@
-# python_individual_homework
+# Python individual homework
 Individual homework in Python by Kata Maria Metsar
 
-## 18.05.2024##
+## 18.05.2024
 ```py
 #Description: Create a program where the user can input deposits into a bank account. The program should use if-else statements, input(), int() and while True loop to keep track of deposits.
 
