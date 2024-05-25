@@ -13,7 +13,7 @@ while True:
   deposit_money = input("What amount do you want to add to your account? ")
   try:
     deposit_money= int(deposit_money)
-  except: #ValueError
+  except: 
    print ("You need to insert a number!")
   else:
     balance = balance + deposit_money
