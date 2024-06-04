@@ -1,6 +1,52 @@
 # Python individual homework
 Individual homework in Python by Kata Maria Metsar
 
+## 01.06 Develop a simple prototype for an online shop
+```py
+class Client:
+    number_of_clients = 0
+
+    def __init__(self, name):
+        self.name = name
+        self.transactions = [] 
+        Client.number_of_clients += 1
+
+    def add_transaction(self, transaction):
+        self.transactions.append(transaction)
+
+class Item:
+    def __init__(self, name):  
+        self.name = name
+
+class Transaction:
+    def __init__(self, item, note):  
+        self.item = item
+        self.note = note
+
+clients = []
+clients.append(Client('Kata'))
+clients.append(Client('Kaspar'))
+clients.append(Client('Emili'))
+clients.append(Client('August'))
+
+clients[0].add_transaction(Transaction(Item("horse"), 'Purchase 1'))
+clients[0].add_transaction(Transaction(Item("car"), 'Purchase 2'))
+clients[0].add_transaction(Transaction(Item("box"), 'Purchase 3'))
+clients[1].add_transaction(Transaction(Item("house"), 'Purchase 4'))
+clients[1].add_transaction(Transaction(Item("lipstick"), 'Purchase 5'))
+clients[2].add_transaction(Transaction(Item("cat"), 'Purchase 6'))
+clients[2].add_transaction(Transaction(Item("candies"), 'Purchase 7'))
+clients[3].add_transaction(Transaction(Item("hat"), 'Purchase 8'))
+clients[3].add_transaction(Transaction(Item("coffee"), 'Purchase 9'))
+
+print(f'Today is our lucky day! {Client.number_of_clients} clients have made purchases in our store.')
+for client in clients:
+    print(f'Client {client.name} bought the following items:')
+    for transaction in client.transactions:
+        print(f'    {transaction.note}:')
+        print(f'        Item: {transaction.item.name}')
+```
+
 ## 18.05.2024
 ```py
 #Description: Create a program where the user can input deposits into a bank account. The program should use if-else statements, input(), int() and while True loop to keep track of deposits.
