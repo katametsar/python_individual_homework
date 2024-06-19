@@ -1,6 +1,39 @@
 # Python individual homework
 Individual homework in Python by Kata Maria Metsar
 
+## 15.06.2024 reading and using data from .txt file
+```py
+filename = "/content/prices.txt"
+
+with open(filename, "r") as file:
+    purchased_items = file.readlines()  
+
+print("Prices:")
+for price in purchased_items:
+    try:
+        price_value = price[0]
+        float(price_value)
+        print(price) 
+    except ValueError:
+        continue  
+
+total_price = 0
+item_count = 0
+
+for price in purchased_items:
+    try:
+       
+        price_value = price
+        price_number = float(price_value)
+        total_price += price_number
+        item_count += 1
+    except ValueError:
+        continue  
+
+print(f"Total number of items: {item_count}")
+print(f"Total price of all items: {total_price}")
+```
+
 ## 01.06 Develop a simple prototype for an online shop
 ```py
 class Client:
@@ -68,37 +101,5 @@ while True:
   more_money = input(f"{user}, would you like to add more money to your account? Answer with 'yes' or 'no'." )
   if more_money.lower() == "no":
       break
-```
-## 15.06.2024 reading and using data from .txt file
-```py
-filename = "/content/prices.txt"
-
-with open(filename, "r") as file:
-    purchased_items = file.readlines()  
-
-print("Prices:")
-for price in purchased_items:
-    try:
-        price_value = price[0]
-        float(price_value)
-        print(price) 
-    except ValueError:
-        continue  
-
-total_price = 0
-item_count = 0
-
-for price in purchased_items:
-    try:
-       
-        price_value = price
-        price_number = float(price_value)
-        total_price += price_number
-        item_count += 1
-    except ValueError:
-        continue  
-
-print(f"Total number of items: {item_count}")
-print(f"Total price of all items: {total_price}")
 ```
 
